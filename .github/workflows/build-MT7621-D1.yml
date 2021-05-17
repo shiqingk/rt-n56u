@@ -1,8 +1,9 @@
 name: Build MT7621-D1
 
 on: 
-  release:
-    types: [published]
+  workflow_dispatch:
+#  release:
+#    types: [published]
 #  push:
 #    tags:
 #    - 'v*'
