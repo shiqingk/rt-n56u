@@ -95,6 +95,9 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_ZEROTIER=y" >> .config #zerotier ~1.3M
         ####################################################################################
         sed -i "s/^CONFIG_TOOLCHAIN_DIR=.*$/CONFIG_TOOLCHAIN_DIR=${CONFIG_TOOLCHAIN_DIR}/g" .config
+        echo "config file"
+        cat .config
+        echo "config all done"
         sudo ./clear_tree_simple
         sudo ./build_firmware_modify $m 0
         sudo mv -f images/*.trx /opt/images/
