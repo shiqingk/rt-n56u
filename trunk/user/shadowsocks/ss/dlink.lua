@@ -252,10 +252,16 @@ local function processData(szType, content)
 				result.tls = "1"
 				result.tls_host = params.host
 				result.insecure = 0
+				result.flow = "0"
 			elseif params.security == "xtls" or params.security == "2" then
 				result.tls = "2"
 				result.tls_host = params.host
 				result.insecure = 0
+				if params.flow == "xtls-rprx-splice" then
+					result.flow = "2"
+				else
+					result.flow = "1"
+				end	
 			else
 				result.tls = "0"
 			end
