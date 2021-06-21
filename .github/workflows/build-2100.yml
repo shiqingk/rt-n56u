@@ -74,7 +74,7 @@ jobs:
         ##广告管理##
         ##DNS服务##
         echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNS=y" >> .config #smartdns
-        echo "CONFIG_FIRMWARE_INCLUDE_ADGUARDHOME=n" >> .config #adg DNS去AD
+        echo "CONFIG_FIRMWARE_INCLUDE_ADGUARDHOME=y" >> .config #adg DNS去AD
         ##DNS服务##
         ##文件管理##
         echo "CONFIG_FIRMWARE_INCLUDE_CADDY=n" >> .config #在线文件管理服务
@@ -89,11 +89,9 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_ALIDDNS=n" >> .config #aliddns
         ##内网穿透服务##
         ##自定义覆盖设置##
-        echo "CONFIG_FIRMWARE_ENABLE_IPV6=n" >>.config     # ipv6
         echo "CONFIG_FIRMWARE_INCLUDE_OPENVPN=n" >>.config # open vpn
         echo "CONFIG_FIRMWARE_INCLUDE_XUPNPD=n" >>.config  # for iptv
         echo "CONFIG_FIRMWARE_INCLUDE_DOGCOM=n" >>.config  # drcom 校园网相关
-        echo "CONFIG_FIRMWARE_INCLUDE_NAPT66=n" >>.config  # ipv6
         ##自定义覆盖设置end##
         ####################################################################################
         sed -i "s/^CONFIG_TOOLCHAIN_DIR=.*$/CONFIG_TOOLCHAIN_DIR=${CONFIG_TOOLCHAIN_DIR}/g" .config
